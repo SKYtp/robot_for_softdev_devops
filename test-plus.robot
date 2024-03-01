@@ -6,7 +6,7 @@ Library           RequestsLibrary
 
 Get Calculation Num
     [Arguments]    ${num1}    ${num2}
-    ${resp}=     GET    http://192.168.143.242:8000/plus/${num1}/${num2}
+    ${resp}=     GET    http://192.168.1.34:8000/plus/${num1}/${num2}
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -18,7 +18,7 @@ Get Calculation Num
 *** Test Cases ***
 Test Calculate Numbers 4 and 2 (ฺBefore Using Keywords)
 
-    ${resp}=    GET    http://192.168.143.242:8000/plus/4/2
+    ${resp}=    GET    http://192.168.1.34:8000/plus/4/2
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
