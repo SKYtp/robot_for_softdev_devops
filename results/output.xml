@@ -1,56 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.6 on win32)" generated="20240219 21:19:17.623" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.6 on win32)" generated="20240302 13:02:12.982" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot For Softdev Devops" source="C:\Users\poul2\Desktop\code\soft-dev\devops_flow\robot_for_softdev_devops">
 <suite id="s1-s1" name="Test-Plus" source="C:\Users\poul2\Desktop\code\soft-dev\devops_flow\robot_for_softdev_devops\test-plus.robot">
-<test id="s1-s1-t1" name="Test Calculate Numbers 4 and 2 (ฺBefore Using Keywords)" line="19">
+<test id="s1-s1-t1" name="Test isPrime Numbers 13219" line="73">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
-<arg>http://192.168.1.33:8000/plus/4/2</arg>
+<arg>http://localhost:5000/is_prime/13219</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20240219 21:19:17.962" level="INFO">GET Request : url=http://192.168.1.33:8000/plus/4/2 
- path_url=/plus/4/2 
+<msg timestamp="20240302 13:02:15.161" level="INFO">GET Request : url=http://localhost:5000/is_prime/13219 
+ path_url=/is_prime/13219 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20240219 21:19:17.963" level="INFO">GET Response : url=http://192.168.1.33:8000/plus/4/2 
+<msg timestamp="20240302 13:02:15.161" level="INFO">GET Response : url=http://localhost:5000/is_prime/13219 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.7.17', 'Date': 'Mon, 19 Feb 2024 14:19:17 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '1', 'Connection': 'close'} 
- body=6 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.10.6', 'Date': 'Sat, 02 Mar 2024 06:02:15 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '4', 'Connection': 'close'} 
+ body=true 
  </msg>
-<msg timestamp="20240219 21:19:17.964" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240219 21:19:17.942" endtime="20240219 21:19:17.964"/>
+<msg timestamp="20240302 13:02:15.163" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240302 13:02:13.103" endtime="20240302 13:02:15.165"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${resp.status_code}</arg>
 <arg>${200}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20240219 21:19:17.965" endtime="20240219 21:19:17.969"/>
+<status status="PASS" starttime="20240302 13:02:15.165" endtime="20240302 13:02:15.170"/>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${resp_text}</var>
-<arg>"${resp.content.decode('utf-8')}"</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240219 21:19:17.975" level="INFO">${resp_text} = 6</msg>
-<status status="PASS" starttime="20240219 21:19:17.973" endtime="20240219 21:19:17.976"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.text}</arg>
+<arg>true</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240302 13:02:15.170" endtime="20240302 13:02:15.170"/>
 </kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${resp_value}</var>
-<arg>${resp_text}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<msg timestamp="20240219 21:19:17.979" level="INFO">${resp_value} = 6</msg>
-<status status="PASS" starttime="20240219 21:19:17.978" endtime="20240219 21:19:17.979"/>
-</kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>${resp_value}</arg>
-<arg>${6}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" starttime="20240219 21:19:17.980" endtime="20240219 21:19:17.981"/>
-</kw>
-<status status="PASS" starttime="20240219 21:19:17.937" endtime="20240219 21:19:17.981"/>
+<status status="PASS" starttime="20240302 13:02:13.103" endtime="20240302 13:02:15.175"/>
 </test>
-<status status="PASS" starttime="20240219 21:19:17.728" endtime="20240219 21:19:17.983"/>
+<status status="PASS" starttime="20240302 13:02:13.014" endtime="20240302 13:02:15.179"/>
 </suite>
-<status status="PASS" starttime="20240219 21:19:17.638" endtime="20240219 21:19:17.992"/>
+<status status="PASS" starttime="20240302 13:02:12.988" endtime="20240302 13:02:15.185"/>
 </suite>
 <statistics>
 <total>

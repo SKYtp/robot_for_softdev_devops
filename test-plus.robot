@@ -45,3 +45,37 @@ Test Calculate Numbers 8.4 and 4
     # Verify the response of plus operation
     Should Be Equal As Numbers    ${resp_value}    ${12.4}
 
+
+Test isPrime Numbers 17
+
+    ${resp}=    GET    http://localhost:5000/is_prime/17
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Get the response content as text
+    ${resp_text}=    Evaluate    "${resp.content.decode('utf-8')}"
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp_text}    true
+
+
+Test isPrime Numbers 36
+
+    ${resp}=    GET    http://localhost:5000/is_prime/36
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    false
+
+Test isPrime Numbers 13219
+
+    ${resp}=    GET    http://localhost:5000/is_prime/13219
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    true
