@@ -79,3 +79,13 @@ Test isPrime Numbers 13219
 
     # Verify the response of plus operation
     Should Be Equal As Strings    ${resp.text}    true
+
+Test isPrime Numbers 7
+
+    ${resp}=    GET    http://192.168.1.33:8000/is_prime/7
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    true
