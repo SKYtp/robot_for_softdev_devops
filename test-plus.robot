@@ -89,3 +89,33 @@ Test isPrime Numbers 7
 
     # Verify the response of plus operation
     Should Be Equal As Strings    ${resp.text}    true
+
+Test isPalindrome Numbers 121
+
+    ${resp}=    GET    http://192.168.143.242:8000/palindrome/121
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    true
+
+Test isPalindrome Numbers 1221
+
+    ${resp}=    GET    http://192.168.143.242:8000/palindrome/1221
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    true
+
+Test isPalindrome Numbers 1231
+
+    ${resp}=    GET    http://192.168.143.242:8000/palindrome/1231
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings    ${resp.text}    false
