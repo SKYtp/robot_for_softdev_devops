@@ -119,3 +119,14 @@ Test isPalindrome Numbers 1231
 
     # Verify the response of plus operation
     Should Be Equal As Strings    ${resp.text}    false
+
+
+Test isMul Number 9
+
+    ${resp}=    GET    http://192.168.143.242:8000/mul/4.5/2
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings  ${resp.text}    9.0
