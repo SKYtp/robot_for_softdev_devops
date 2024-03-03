@@ -98,7 +98,7 @@ Test isPalindrome Numbers 121
     Should Be Equal    ${resp.status_code}    ${200}
 
     # Verify the response of plus operation
-    Should Be Equal As Strings    ${resp.text}    true
+    Should Be Equal    ${resp}    ${True}
 
 Test isPalindrome Numbers 1221
 
