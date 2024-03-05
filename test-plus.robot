@@ -121,12 +121,32 @@ Test isPalindrome Numbers 1231
     Should Be Equal As Strings    ${resp.text}    false
 
 
-Test isMul Number 9
+Test isMul Number 0
 
-    ${resp}=    GET    http://192.168.143.242:8000/mul/4.5/2
+    ${resp}=    GET    http://192.168.143.242:8000/mul3/0
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
     # Verify the response of plus operation
-    Should Be Equal As Strings  ${resp.text}    9.0
+    Should Be Equal As Strings  ${resp.text}    0
+
+Test isMul Number 9
+
+    ${resp}=    GET    http://192.168.143.242:8000/mul3/3
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings  ${resp.text}    9
+
+Test isMul Number 4.5
+
+    ${resp}=    GET    http://192.168.143.242:8000/mul3/1.5
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Verify the response of plus operation
+    Should Be Equal As Strings  ${resp.text}    4.5
