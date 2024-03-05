@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.6 on win32)" generated="20240305 08:54:57.049" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\poul2\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="GET">
+<var>${resp}</var>
+<arg>http://192.168.143.242:8000/palindrome/1221</arg>
+<msg timestamp="20240305 08:54:58.236" level="FAIL">No keyword with name 'GET' found. Did you mean:
+    BuiltIn.Get Time</msg>
+<status status="FAIL" starttime="20240305 08:54:58.235" endtime="20240305 08:54:58.236"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20240305 08:54:58.236" endtime="20240305 08:54:58.236"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.text}</arg>
+<arg>true</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240305 08:54:58.236" endtime="20240305 08:54:58.236"/>
+</kw>
+<status status="PASS" starttime="20240305 08:54:57.104" endtime="20240305 08:54:59.468"/>
+</kw>
+<status status="PASS" starttime="20240305 08:54:57.103" endtime="20240305 08:54:59.468"/>
+</test>
+<status status="PASS" starttime="20240305 08:54:57.051" endtime="20240305 08:54:59.469"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
